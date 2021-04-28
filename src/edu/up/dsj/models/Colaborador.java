@@ -1,6 +1,5 @@
 package edu.up.dsj.models;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Colaborador {
@@ -11,17 +10,19 @@ public class Colaborador {
 	
 	private int matricula;
 	
-	private int telefone;
+	private long telefone;
+	
+	private String endereco;
 	
 	private Date cadastradoEm;
 	
-	private Salario salario;
+	private float salario;
 	
 	private Setor setor;
 	
 	public Colaborador() {
 		
-		this.cadastradoEm = new Date(System.currentTimeMillis());
+		this.cadastradoEm = new Date();
 	}
 	
 	public String getNome() {
@@ -48,12 +49,20 @@ public class Colaborador {
 		this.matricula = matricula;
 	}
 
-	public int getTelefone() {
+	public long getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(long telefone) {
 		this.telefone = telefone;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public Date getCadastradoEm() {
@@ -64,11 +73,11 @@ public class Colaborador {
 		this.cadastradoEm = cadastradoEm;
 	}
 
-	public Salario getSalario() {
+	public float getSalario() {
 		return salario;
 	}
 
-	public void setSalario(Salario salario) {
+	public void setSalario(float salario) {
 		this.salario = salario;
 	}
 
@@ -83,8 +92,7 @@ public class Colaborador {
 	@Override
 	public String toString() {
 		return "Colaborador [nome=" + nome + ", cpf=" + cpf + ", matricula=" + matricula + ", telefone=" + telefone
-				+ ", cadastradoEm=" + cadastradoEm + ", salario=" + salario + ", setor=" + setor + "]";
+				+ ", endereco=" + endereco + ", cadastradoEm=" + cadastradoEm + ", salario=" + salario + ", setor="
+				+ setor + "]";
 	}
-
-	
 }

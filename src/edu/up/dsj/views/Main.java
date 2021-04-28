@@ -10,27 +10,34 @@ public class Main {
 		int escolha;
 		
 		do {
-			System.out.println("----- HUMAN RESOURCES MANAGER ------\n");
+			System.out.println("\n----- HUMAN RESOURCES MANAGER ------\n");
 			
 			System.out.println("Escolha uma das opções abaixo. Aperte 0 para sair\n");
 
-			System.out.println("1. Novo Colaborador\n2. Listar Colaboradores");		
+			System.out.println("1. Cadastrar Setor\n2. Setores Existentes\n3. Novo Funcionário"
+					+ "\n4. Visualizar Funcionários");		
 			
 			System.out.print("\nEntre com a opção desejada: ");
 			escolha = sc.nextInt();
 			switch (escolha) {
 
 			case 1:
-				CadastrarColaborador.cadastrar();
+				CadastrarSetor.cadastrar();
 				break;
 			case 2:
+				ListarSetores.renderizar();
+				break;
+			case 3:
+				CadastrarColaborador.cadastrar();
+				break;
+			case 4:
 				ListarColaboradores.renderizar();
 				break;
 			case 0:
-				System.out.println("Saindo...");
+				System.out.println("\nSaindo...");
 				break;
 				default:
-					System.out.println("Opção Inválida!\n");
+					System.out.println("\nOpção Inválida!\n");
 					break;	
 			}
 		} while (escolha != 0);
