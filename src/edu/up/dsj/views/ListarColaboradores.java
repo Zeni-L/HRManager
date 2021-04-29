@@ -19,7 +19,7 @@ public class ListarColaboradores {
 		for (Colaborador colaborador : ColaboradorController.retornarListaColaboradores()) {
 			System.out.println("Nome: " + colaborador.getNome() + " | CPF: " + colaborador.getCpf()
 					+ " | Setor: " + colaborador.getSetor().getNome() + " | Cadastrado em: " 
-					+ formatter.format(colaborador.getCadastradoEm()) + "\n");
+					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereço: " + colaborador.getEndereco() + "\n");
 		}
 		System.out.println("\n================================\n");
 	}

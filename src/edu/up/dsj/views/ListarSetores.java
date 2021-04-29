@@ -15,6 +15,6 @@ public class ListarSetores {
 		for(Setor setor : SetorController.retornarListaSetores()) {
 			System.out.println(setor.getCodigoSetor() + "." + " " + setor.getNome());
 		}
-		System.out.println("\n======================");
+		System.out.println("\n=======================");
 	}
 }

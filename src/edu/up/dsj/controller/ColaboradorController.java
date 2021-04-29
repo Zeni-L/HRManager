@@ -10,7 +10,7 @@ import edu.up.dsj.models.Colaborador;
 public class ColaboradorController {
 
 	private static ArrayList<Colaborador> funcionarios = new ArrayList<Colaborador>();
-
+	
 	public static boolean cadastrar(Colaborador novoColaborador) {
 		
 			for (Colaborador funcionariosCadastrados : funcionarios) {

@@ -10,28 +10,20 @@ public class Main {
 		int escolha;
 		
 		do {
-			System.out.println("\n----- HUMAN RESOURCES MANAGER ------\n");
-			
-			System.out.println("Escolha uma das opções abaixo. Aperte 0 para sair\n");
+			System.out.println("------------ HUMAN RESOURCES MANAGER -------------\n"
+					+ "Escolha uma das opções abaixo. Aperte 0 para sair\n");
 
-			System.out.println("1. Cadastrar Setor\n2. Setores Existentes\n3. Novo Funcionário"
-					+ "\n4. Visualizar Funcionários");		
+			System.out.println("1. Setores\n2. Funcionários\n0. Sair");		
 			
 			System.out.print("\nEntre com a opção desejada: ");
 			escolha = sc.nextInt();
 			switch (escolha) {
 
 			case 1:
-				CadastrarSetor.cadastrar();
+				MenuSetores.isSetor();
 				break;
 			case 2:
-				ListarSetores.renderizar();
-				break;
-			case 3:
-				CadastrarColaborador.cadastrar();
-				break;
-			case 4:
-				ListarColaboradores.renderizar();
+				MenuColaborador.isColaborador();
 				break;
 			case 0:
 				System.out.println("\nSaindo...");
