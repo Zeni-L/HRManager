@@ -10,10 +10,10 @@ public static void isSetor() {
 		int escolha;
 		
 		do {
-			System.out.println("\n============ SETORES ============\n" + "Selecione uma das opções abaixo:\n"
+			System.out.println("\n============ SETORES ============\n" + "Selecione uma das opï¿½ï¿½es abaixo:\n"
 					+ "\n1. Cadastrar novo setor\n2. Listar todos os setores\n0. Sair");
 			
-			System.out.print("\nEntre com a opção desejada: ");
+			System.out.print("\nEntre com a opï¿½ï¿½o desejada: ");
 			escolha = sc.nextInt();
 			
 			switch (escolha) {
@@ -27,7 +27,7 @@ public static void isSetor() {
 				System.out.println("Saindo...\n");
 				break;
 			default:
-				System.out.println("Opção inválida\n");
+				System.out.println("Opï¿½ï¿½o invï¿½lida\n");
 				break;
 			}
 		} while (escolha != 0);

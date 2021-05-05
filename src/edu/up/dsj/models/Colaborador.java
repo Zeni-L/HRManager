@@ -16,7 +16,7 @@ public class Colaborador {
 	
 	private Date cadastradoEm;
 	
-	private float salario;
+	private float salarioBruto;
 	
 	private Setor setor;
 	
@@ -73,12 +73,12 @@ public class Colaborador {
 		this.cadastradoEm = cadastradoEm;
 	}
 
-	public float getSalario() {
-		return salario;
+	public float getSalarioBruto() {
+		return salarioBruto;
 	}
 
-	public void setSalario(float salario) {
-		this.salario = salario;
+	public void setSalarioBruto(float salarioBruto) {
+		this.salarioBruto = salarioBruto;
 	}
 
 	public Setor getSetor() {
@@ -92,7 +92,7 @@ public class Colaborador {
 	@Override
 	public String toString() {
 		return "Colaborador [nome=" + nome + ", cpf=" + cpf + ", matricula=" + matricula + ", telefone=" + telefone
-				+ ", endereco=" + endereco + ", cadastradoEm=" + cadastradoEm + ", salario=" + salario + ", setor="
+				+ ", endereco=" + endereco + ", cadastradoEm=" + cadastradoEm + ", salario bruto=" + salarioBruto + ", setor="
 				+ setor + "]";
 	}
 }

@@ -7,7 +7,7 @@ import edu.up.dsj.controller.ValidarCpf;
 import edu.up.dsj.models.Colaborador;
 
 /**
- * Classe para cadastrar um novo colaborador. Não permite cadastrar pessoas com
+ * Classe para cadastrar um novo colaborador. Nï¿½o permite cadastrar pessoas com
  * o mesmo CPF.
  * 
  * @author Leandro Zeni
@@ -32,23 +32,23 @@ public class CadastrarColaborador {
 				System.out.print("Telefone para contato: ");
 				novoColaborador.setTelefone(sc.nextLong());
 				sc.nextLine();
-				System.out.print("Endereço: ");
+				System.out.print("Endereï¿½o: ");
 				novoColaborador.setEndereco(sc.nextLine());
-				System.out.print("Salário Bruto: ");
-				novoColaborador.setSalario(sc.nextFloat());
-				System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
+				System.out.print("Salï¿½rio Bruto: ");
+				novoColaborador.setSalarioBruto(sc.nextFloat());
+				System.out.println("\nCadastre o funcionï¿½rio em um dos setores abaixo: ");
 				ListarSetores.renderizar();
-				System.out.print("\nCódigo do Setor: ");
+				System.out.print("\nCï¿½digo do Setor: ");
 				codSetor = (sc.nextInt());
 				novoColaborador.setSetor(SetorController.retornarSetor(codSetor));
 				if (ColaboradorController.cadastrar(novoColaborador) == true) {
 					System.out.println("\nColaborador Cadastrado!\n");
 				} else {
-					System.out.println("\nNão foi possível cadastrar\n");
+					System.out.println("\nNï¿½o foi possï¿½vel cadastrar\n");
 				}
 			}
 			else
-				System.out.println("\nCPF inválido. Tente novamente.");
+				System.out.println("\nCPF invï¿½lido. Tente novamente.");
 
 			System.out.println("Deseja cadastrar mais colaboradores?");
 			System.out.print("Aperte S para cadastrar mais ou qualquer tecla para sair: ");
