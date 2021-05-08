@@ -10,8 +10,8 @@ public class MenuColaborador {
 		int escolha;
 		
 		do {
-			System.out.println("\n========= COLABORADORES =========\n" + "Selecione uma das opções abaixo:\n"
-					+ "\n1. Cadastrar novo colaborador\n2. Listar todos os colaboradores\n3. Buscar colaborador");
+			System.out.println("\n========= COLABORADORES =========\n" + "Selecione uma das opÃ§Ãµes abaixo:\n"
+					+ "\n1. Cadastrar novo colaborador\n2. Listar todos os colaboradores\n3. Calcular folha de pagamento");
 			escolha = sc.nextInt();
 			switch (escolha) {
 			case 1:
@@ -21,12 +21,12 @@ public class MenuColaborador {
 				ListarColaboradores.renderizar();
 				break;
 			case 3:
-				System.out.println("Opção ainda não configurada");
+				FolhaPagamento.calcularFolha();
 				break;
 			case 0:
 				System.out.println("Saindo...\n");
 			default:
-				System.out.println("Opção inválida\n");
+				System.out.println("OpÃ§Ã£o invÃ¡lida\n");
 			}
 		} while (escolha != 0);
 	
