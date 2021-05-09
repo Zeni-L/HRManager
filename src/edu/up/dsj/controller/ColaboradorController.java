@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import edu.up.dsj.models.Colaborador;
 
 /**
- * Classe para controle de cadastros e manipulação de ArrayList para o objeto Colaborador.
+ * Classe para controle de cadastros e manipulaÃ§Ã£o de ArrayList para o objeto Colaborador.
  * @author Leandro Zeni
  */
 public class ColaboradorController {
@@ -26,5 +26,14 @@ public class ColaboradorController {
 	
 	public static ArrayList<Colaborador> retornarListaColaboradores(){
 		return funcionarios;
+	}
+	
+	public static Colaborador buscarPorCpf(String cpf) {
+	for (Colaborador funcionariosCadastrados : funcionarios) {
+		if (funcionariosCadastrados.getCpf().equals(cpf)) {
+			return funcionariosCadastrados;
+		}
+	}
+	return null;	 
 	}
 }
