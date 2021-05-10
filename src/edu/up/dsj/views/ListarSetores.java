@@ -1,3 +1,4 @@
+package edu.up.dsj.views;
 
 import edu.up.dsj.controller.SetorController;
 import edu.up.dsj.models.Setor;
