@@ -1,10 +1,6 @@
-package edu.up.dsj.views;
 
 import java.util.Scanner;
-import edu.up.dsj.controller.ColaboradorController;
-import edu.up.dsj.controller.SetorController;
-import edu.up.dsj.controller.ValidarCpf;
-import edu.up.dsj.models.Colaborador;
+
 
 /**
  * Classe para cadastrar um novo colaborador. N�o permite cadastrar pessoas com

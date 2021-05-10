@@ -1,10 +1,9 @@
-package edu.up.dsj.views;
 
 import edu.up.dsj.controller.SetorController;
 import edu.up.dsj.models.Setor;
 
 /**
- * Classe que imprime na tela para o usuário a lista de setores existentes.
+ * Classe que imprime na tela para o usuï¿½rio a lista de setores existentes.
  * @author Leandro Zeni
  */
 public class ListarSetores {

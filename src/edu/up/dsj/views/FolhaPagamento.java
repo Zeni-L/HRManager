@@ -6,6 +6,7 @@ package edu.up.dsj.views;
 
 import java.util.Scanner;
 
+import edu.up.dsj.controller.SalarioLiquidoController;
 import edu.up.dsj.controller.ColaboradorController;
 import edu.up.dsj.controller.SetorController;
 import edu.up.dsj.controller.ValidarCpf;
@@ -29,6 +30,7 @@ public class FolhaPagamento {
 			System.out.print("Digite o CPF do funcionário: ");
 			cpfColaborador = sc.nextLine();
 			colaborador = ColaboradorController.buscarPorCpf(cpfColaborador);
+			
 			if(colaborador != null) {
 				salariobruto = colaborador.getSalarioBruto();
 				pagamento.setSalarioBruto(salariobruto);
@@ -39,7 +41,7 @@ public class FolhaPagamento {
 				
 			}
 			else {
-				
+				System.out.println("Não existe um cliente com esse CPF cadastrado.");
 			}
 			
 			

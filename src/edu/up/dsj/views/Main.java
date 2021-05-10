@@ -11,11 +11,11 @@ public class Main {
 		
 		do {
 			System.out.println("------------ HUMAN RESOURCES MANAGER -------------\n"
-					+ "Escolha uma das opções abaixo. Aperte 0 para sair\n");
+					+ "Escolha uma das opï¿½ï¿½es abaixo. Aperte 0 para sair\n");
 
-			System.out.println("1. Setores\n2. Funcionários\n0. Sair");		
+			System.out.println("1. Setores\n2. Funcionï¿½rios\n0. Sair");		
 			
-			System.out.print("\nEntre com a opção desejada: ");
+			System.out.print("\nEntre com a opï¿½ï¿½o desejada: ");
 			escolha = sc.nextInt();
 			switch (escolha) {
 
@@ -29,12 +29,12 @@ public class Main {
 				System.out.println("\nSaindo...");
 				break;
 				default:
-					System.out.println("\nOpção Inválida!\n");
+					System.out.println("\nOpï¿½ï¿½o Invï¿½lida!\n");
 					break;	
 			}
 		} while (escolha != 0);
 		
-		System.out.println("\nFim da execução do HR Manager - Todos os direitos reservados.");
+		System.out.println("\nFim da execuï¿½ï¿½o do HR Manager - Todos os direitos reservados.");
 		sc.close();
 	}
 }
