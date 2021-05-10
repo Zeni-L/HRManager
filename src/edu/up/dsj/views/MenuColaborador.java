@@ -11,7 +11,7 @@ public class MenuColaborador {
 		
 		do {
 			System.out.println("\n========= COLABORADORES =========\n" + "Selecione uma das opções abaixo:\n"
-					+ "\n1. Cadastrar novo colaborador\n2. Listar todos os colaboradores\n3. Calcular folha de pagamento");
+					+ "\n1. Cadastrar novo colaborador\n2. Listar todos os colaboradores\n3. Calcular folha de pagamento\n0. Sair");
 			escolha = sc.nextInt();
 			switch (escolha) {
 			case 1:

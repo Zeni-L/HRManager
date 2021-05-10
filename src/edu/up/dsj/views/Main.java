@@ -13,7 +13,7 @@ public class Main {
 			System.out.println("------------ HUMAN RESOURCES MANAGER -------------\n"
 					+ "Escolha uma das opções abaixo. Aperte 0 para sair\n");
 
-			System.out.println("1. Setores\n2. Funcionários\n0. Sair");		
+			System.out.println("1. Setores\n2. Funcionários\n3. Ponto\n0. Sair");		
 			
 			System.out.print("\nEntre com a opção desejada: ");
 			escolha = sc.nextInt();
@@ -24,6 +24,9 @@ public class Main {
 				break;
 			case 2:
 				MenuColaborador.isColaborador();
+				break;
+			case 3:
+				MenuPonto.isPonto();
 				break;
 			case 0:
 				System.out.println("\nSaindo...");
