@@ -26,18 +26,21 @@ public class BaterPonto {
 		funcionario = ColaboradorController.buscarPorCpf(cpf);
 		if(funcionario != null) {
 			ponto.setFuncionario(funcionario);
-			int retorno = FolhaPontoController.BaterPonto(ponto);
-			switch (retorno) {
+			Object[] retorno = FolhaPontoController.verificaLivroPonto(ponto);
+			int opcao = (int) retorno[0];
+			switch (opcao) {
 				case 1: {
+					FolhaPontoController.pontoEntrada(ponto);
 					System.out.println("\nFolha Ponto cadastrada");
 					System.out.println("\nEntrada executada");
 					break;
 				}
 				case 2: {
+					FolhaPontoController.pontoSaida((int) retorno[1]);
 					System.out.println("\nSaida executada");
 					break;
 				}
-				case 3: {
+				default: {
 					System.out.println("\nPonto do dia completo");
 					break;
 				}
