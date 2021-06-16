@@ -1,4 +1,4 @@
-package edu.up.dsj.controller;
+package edu.up.dsj.utils;
 
 import java.util.InputMismatchException;
 

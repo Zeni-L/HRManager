@@ -6,17 +6,11 @@ public class Colaborador {
 
 	private String nome;
 
-	private String cpf;
-
-	private int matricula;
-
-	private long telefone;
+	private String telefone;
 
 	private String endereco;
 
 	private Date cadastradoEm;
-
-	private float salarioBruto;
 
 	private Setor setor;
 
@@ -33,27 +27,11 @@ public class Colaborador {
 		this.nome = nome;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public int getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(int matricula) {
-		this.matricula = matricula;
-	}
-
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -73,26 +51,11 @@ public class Colaborador {
 		this.cadastradoEm = cadastradoEm;
 	}
 
-	public float getSalarioBruto() {
-		return salarioBruto;
-	}
-
-	public void setSalarioBruto(float salarioBruto) {
-		this.salarioBruto = salarioBruto;
-	}
-
 	public Setor getSetor() {
 		return setor;
 	}
 
 	public void setSetor(Setor setor) {
 		this.setor = setor;
-	}
-
-	@Override
-	public String toString() {
-		return "\nColaborador: " + nome + "\nCPF: " + cpf + "\nMatrícula: " + matricula + "\nTelefone: " + telefone
-				+ "\nEndereço: " + endereco + "\nData de Cadastro: " + cadastradoEm + "\nSalario Bruto: " + salarioBruto
-				+ "\nSetor: " + setor;
 	}
 }

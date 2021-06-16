@@ -1,20 +1,19 @@
 package edu.up.dsj.views;
 
-import java.util.Scanner;
+import edu.up.dsj.utils.Console;
 
 public class MenuSetores {
 
 	public static void isSetor() {
 
-		Scanner sc = new Scanner(System.in);
 		int escolha;
 
 		do {
-			System.out.println("\n============ SETORES ============\n" + "\n1. Cadastrar novo setor"
-					+ "\n2. Listar todos os setores" + "\n3. Listar vagas do setor" + "\n0. Sair");
+			System.out.println("\n============ SETORES ============\n");
+			System.out.println("1. Cadastrar novo setor" + "\n2. Listar todos os setores" + "\n3. Listar vagas do setor"
+					+ "\n0. Sair");
 
-			System.out.print("\nEntre com a opção desejada: ");
-			escolha = sc.nextInt();
+			escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
 
 			switch (escolha) {
 			case 1:

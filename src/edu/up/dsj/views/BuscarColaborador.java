@@ -1,27 +1,50 @@
 package edu.up.dsj.views;
 
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
 
 import edu.up.dsj.controller.ColaboradorController;
-import edu.up.dsj.models.Colaborador;
+import edu.up.dsj.models.PessoaFisica;
+import edu.up.dsj.models.PessoaJuridica;
+import edu.up.dsj.utils.Console;
 
 public class BuscarColaborador {
 
-	public static void retornarColaborador() {
+	public static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+	
+	public static void imprimirColaborador() {
 
-		Scanner sc = new Scanner(System.in);
-		Colaborador colaborador = new Colaborador();
-		String cpf;
-
+		String cadastro;
+		
 		System.out.println("\n========= CONSULTAR COLABORADORES =========\n");
-		System.out.print("CPF do colaborador: ");
-		cpf = sc.nextLine();
 
-		colaborador = ColaboradorController.buscarPorCpf(cpf);
+		cadastro = Console.lerString("CPF ou CNPJ: ");
 
-		if (colaborador != null) {
-			System.out.println(colaborador);
-		} else
-			System.out.println("Colaborador não cadastrado. Tente novamente");
+		if(cadastro.length() == 9) {
+			
+			PessoaFisica colaboradorpf = new PessoaFisica();
+			colaboradorpf = ColaboradorController.buscarPorCpf(cadastro);
+
+			if (colaboradorpf != null) {
+				System.out.println("Nome: " + colaboradorpf.getNome());
+				System.out.println("CPF: " + colaboradorpf.getCpf());
+				System.out.println("Contato: " + colaboradorpf.getTelefone());
+				System.out.println("Data de Contratação: " + formatter.format(colaboradorpf.getCadastradoEm()));
+				System.out.println("Setor: " + colaboradorpf.getSetor().getNome());
+			} else
+				System.out.println("\nColaborador não cadastrado. Tente novamente\n");
+		}else {
+			
+			PessoaJuridica colaboradorpj = new PessoaJuridica();
+			colaboradorpj = ColaboradorController.buscarPorCnpj(cadastro);
+
+			if (colaboradorpj != null) {
+				System.out.println("Nome: " + colaboradorpj.getNome());
+				System.out.println("CPF: " + colaboradorpj.getCnpj());
+				System.out.println("Contato: " + colaboradorpj.getTelefone());
+				System.out.println("Data de Contratação: " + formatter.format(colaboradorpj.getCadastradoEm()));
+				System.out.println("Setor: " + colaboradorpj.getSetor().getNome());
+			} else
+				System.out.println("\nColaborador não cadastrado. Tente novamente\n");
+		}
 	}
 }

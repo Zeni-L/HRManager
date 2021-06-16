@@ -1,46 +1,44 @@
 package edu.up.dsj.views;
 
-import java.util.Scanner;
+import edu.up.dsj.utils.Console;
 
 public class MenuColaborador {
 
 	public static void isColaborador() {
 
-		Scanner sc = new Scanner(System.in);
-		int escolha;
+		int escolha = 0;
 
 		do {
-			System.out.println("\n========= COLABORADORES =========\n" + "\n1. Cadastrar novo colaborador"
-					+ "\n2. Listar todos os colaboradores" + "\n3. Consultar colaboradores"
-					+ "\n4. Editar informações de colaborador" + "\n5. Deletar colaborador"
-					+ "\n6. Gerar folha de pagamento" + "\n0. Sair");
+			System.out.println("\n========= COLABORADORES =========\n");
 
-			System.out.print("\nEntre com a opção desejada: ");
-			escolha = sc.nextInt();
+			System.out.println("1. Cadastrar novo colaborador" + "\n2. Listar todos os colaboradores"
+					+ "\n3. Consultar colaboradores" + "\n4. Editar informações de colaborador"
+					+ "\n5. Deletar colaborador" + "\n0. Sair");
+
+			escolha = Console.lerInteiro("\nEscolha uma das opções acima: ");
+
 			switch (escolha) {
 			case 1:
 				CadastrarColaborador.cadastrar();
 				break;
 			case 2:
-				ListarColaboradores.renderizar();
+//				ListarColaboradores.renderizar();
 				break;
 			case 3:
-				BuscarColaborador.retornarColaborador();
+				BuscarColaborador.imprimirColaborador();
 				break;
 			case 4:
 				EditarColaborador.alterar();
 				break;
 			case 5:
-				RemoverColaborador.remover();
-				break;
-			case 6:
-				FolhaPagamento.calcularFolha();
+//				RemoverColaborador.remover();
 				break;
 			case 0:
 				System.out.println("Saindo...\n");
 				break;
 			default:
-				System.out.println("Opção inválida\n");
+				System.out.println("\nOpção inválida!");
+				break;
 			}
 		} while (escolha != 0);
 	}

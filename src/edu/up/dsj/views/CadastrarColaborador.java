@@ -1,65 +1,99 @@
 package edu.up.dsj.views;
 
-
-import java.util.Scanner;
-
 import edu.up.dsj.controller.ColaboradorController;
 import edu.up.dsj.controller.SetorController;
-import edu.up.dsj.controller.VagasController;
-import edu.up.dsj.controller.ValidarCpf;
-import edu.up.dsj.models.Colaborador;
+import edu.up.dsj.models.PessoaFisica;
+import edu.up.dsj.models.PessoaJuridica;
+import edu.up.dsj.utils.Console;
+import edu.up.dsj.utils.ValidarCnpj;
+import edu.up.dsj.utils.ValidarCpf;
 
 /**
- * Classe para cadastrar um novo colaborador. Não permite cadastrar pessoas com o mesmo CPF.
+ * Classe para cadastrar uma nova pessoa fisica ou juridica. Não permite
+ * cadastrar pessoas com o mesmo CPF/CNPJ.
  * @author Leandro Zeni
  */
 public class CadastrarColaborador {
 
 	public static void cadastrar() {
 
-		Scanner sc = new Scanner(System.in);
-		String escolha;
+		if (!SetorController.retornarListaSetores().isEmpty()) {
+			String escolha;
 
-		do {
-			Colaborador novoColaborador = new Colaborador();
-			Integer codSetor;
-			int vaga;
+			do {
+				int cadastro;
+				int codSetor;
 
-			System.out.println("\n ========= NOVO COLABORADOR =========\n");
-			System.out.print("Nome: ");
-			novoColaborador.setNome(sc.nextLine());
-			System.out.print("CPF: ");
-			novoColaborador.setCpf(sc.nextLine());
-			if (ValidarCpf.isCPF(novoColaborador.getCpf()) == true) {
-				System.out.print("Telefone para contato: ");
-				novoColaborador.setTelefone(sc.nextLong());
-				sc.nextLine();
-				System.out.print("Endereço: ");
-				novoColaborador.setEndereco(sc.nextLine());
-				System.out.print("Salário Bruto: ");
-				novoColaborador.setSalarioBruto(sc.nextFloat());
-				System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
-				ListarSetores.renderizar();
-				System.out.print("\nCódigo do Setor: ");
-				codSetor = (sc.nextInt());
-				novoColaborador.setSetor(SetorController.retornarSetor(codSetor));
-				vaga = VagasController.acharVaga(codSetor);
-				if (ColaboradorController.cadastrar(novoColaborador) == true) {
-					VagasController.preencherVaga(vaga);
-					System.out.println("\nColaborador Cadastrado!\n");
-				} else {
-					System.out.println("\nNï¿½o foi possï¿½vel cadastrar\n");
+				System.out.println("\n========= NOVO COLABORADOR =========");
+				System.out.println("\nPessoa física ou jurídica?");
+				System.out.println("\n1. Pessoa Física\n2. Pessoa Juridica");
+
+				cadastro = Console.lerInteiro("\nSelecione a opção: ");
+
+				switch (cadastro) {
+
+				case 1:
+					PessoaFisica novapf = new PessoaFisica();
+
+					novapf.setNome(Console.lerString("\nNome: "));
+					novapf.setCpf(Console.lerString("CPF: "));
+
+					if (ValidarCpf.isCPF(novapf.getCpf()) == true) {
+						novapf.setTelefone(Console.lerString("Telefone de contato: "));
+						novapf.setEndereco(Console.lerString("Endereço: "));
+
+						System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
+						ListarSetores.renderizar();
+
+						codSetor = Console.lerInteiro("\nCódigo do setor: ");
+						novapf.setSetor(SetorController.retornarSetor(codSetor));
+
+						if (ColaboradorController.cadastrarPessoaFisica(novapf) == true) {
+							System.out.println("\nColaborador Cadastrado!");
+						} else {
+							System.out.println("\nNão foi possível cadastrar");
+						}
+					} else {
+						System.out.println("\nCNPJ inválido. Tente novamente.");
+					}
+					break;
+
+				case 2:
+					PessoaJuridica novapj = new PessoaJuridica();
+
+					novapj.setNome(Console.lerString("\nNome: "));
+					novapj.setCnpj(Console.lerString("CNPJ: "));
+
+					if (ValidarCnpj.isCNPJ(novapj.getCnpj()) == true) {
+						novapj.setTelefone(Console.lerString("Telefone de contato: "));
+						novapj.setEndereco(Console.lerString("Endereço: "));
+
+						System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
+						ListarSetores.renderizar();
+
+						codSetor = Console.lerInteiro("\nCódigo do setor: ");
+						novapj.setSetor(SetorController.retornarSetor(codSetor));
+
+						if (ColaboradorController.cadastrarPessoaJuridica(novapj) == true) {
+							System.out.println("\nColaborador Cadastrado!");
+						} else {
+							System.out.println("\nNão foi possível cadastrar");
+						}
+					} else {
+						System.out.println("\nCPF inválido. Tente novamente.");
+					}
+					break;
+
 				}
-			}
-			else
-				System.out.println("\nCPF inválido. Tente novamente.");
 
-			System.out.println("Deseja cadastrar mais colaboradores?");
-			System.out.print("Aperte S para cadastrar mais ou qualquer tecla para sair: ");
-			sc.nextLine();
-			escolha = sc.nextLine();
+				System.out.println("\nDeseja cadastrar mais colaboradores?");
 
-		} while (escolha.equalsIgnoreCase("S"));
+				escolha = Console.lerString("Aperte S para cadastrar mais ou qualquer tecla para sair: ");
+
+			} while (escolha.equalsIgnoreCase("S"));
+		} else {
+			System.out.println("\nNão há setores cadastrados. Cadastre um novo setor e tente novamente.");
+		}
 
 	}
 }
