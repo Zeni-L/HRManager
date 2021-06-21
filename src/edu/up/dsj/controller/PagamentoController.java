@@ -2,6 +2,7 @@ package edu.up.dsj.controller;
 
 import java.util.ArrayList;
 
+import edu.up.dsj.models.FuncionarioHora;
 import edu.up.dsj.models.Pagamento;
 
 public class PagamentoController {
@@ -45,7 +46,7 @@ public class PagamentoController {
 		return holeritesFiltrados;
 	}
 	
-	public static double calcularSalarioBruto(int horas, double valor) {
+	public static double calcularSalarioBruto(double horas, double valor) {
 		return horas * valor;
 	}
 
@@ -81,6 +82,12 @@ public class PagamentoController {
 	
 	public static double calcularSalarioLiquido(double bruto, double ir, double inss) {
 		return bruto - ir - inss;
+	}
+	
+	public static boolean cadastarFolhaHorista(FuncionarioHora funcionario) {
+		
+		
+		return true;
 	}
 	
 }

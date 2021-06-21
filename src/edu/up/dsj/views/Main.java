@@ -13,7 +13,7 @@ public class Main {
 		
 			do {
 				System.out.println("========= HUMAN RESOURCES MANAGER =========\n");
-				System.out.println("1. Setores" + "\n2. Funcionários" + "\n3. Ponto" + "\n4. Holerites" + "\n0. Sair");
+				System.out.println("1. Setores" + "\n2. Funcionários" + "\n3. Holerites" + "\n0. Sair");
 
 					escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
 
@@ -23,13 +23,10 @@ public class Main {
 						MenuSetores.isSetor();
 						break;
 					case 2:
-						MenuColaborador.isColaborador();
+						MenuFuncionario.isColaborador();
 						break;
 					case 3:
-//						MenuPonto.isPonto();
-						break;
-					case 4:
-						MenuFolhaPag.isHolerite();
+						MenuFolha.isHolerite();
 						break;
 					case 0:
 						System.out.println("\nSaindo...");

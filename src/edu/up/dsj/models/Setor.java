@@ -8,7 +8,7 @@ public class Setor {
 	
 	private Integer codigoSetor;
 	
-	private ArrayList<Colaborador> colaboradores;
+	private ArrayList<Funcionario> colaboradores;
 	
 	public Setor() {
 		
@@ -30,11 +30,11 @@ public class Setor {
 		this.codigoSetor = codigoSetor;
 	}
 	
-	public ArrayList<Colaborador> getColaboradores() {
+	public ArrayList<Funcionario> getColaboradores() {
 		return colaboradores;
 	}
 
-	public void setColaboradores(ArrayList<Colaborador> colaboradores) {
+	public void setColaboradores(ArrayList<Funcionario> colaboradores) {
 		this.colaboradores = colaboradores;
 	}
 

@@ -20,7 +20,7 @@ public class CadastrarSetor {
 		System.out.println("\n========= NOVO SETOR =========\n");
 		novoSetor.setNome(Console.lerString("Nome do setor: "));
 
-		novoSetor.setCodigoSetor(SetorController.GerarCodSetor());
+		novoSetor.setCodigoSetor(SetorController.gerarCodSetor());
 
 		if (SetorController.cadastrar(novoSetor) == true) {
 			System.out.println("\nNovo setor cadastrado!");

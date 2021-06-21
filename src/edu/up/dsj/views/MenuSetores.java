@@ -10,11 +10,11 @@ public class MenuSetores {
 
 		do {
 			System.out.println("\n============ SETORES ============\n");
-			System.out.println("1. Cadastrar novo setor" + "\n2. Listar todos os setores" + "\n3. Listar vagas do setor"
-					+ "\n0. Sair");
+			System.out.println(
+					"1. Cadastrar novo setor" + "\n2. Listar todos os setores" + "\n3. Editar Setor" + "\n0. Sair");
 
 			escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
-
+			
 			switch (escolha) {
 			case 1:
 				CadastrarSetor.cadastrar();
@@ -23,7 +23,7 @@ public class MenuSetores {
 				ListarSetores.renderizar();
 				break;
 			case 3:
-				ListarVagas.renderizar();
+				EditarSetor.alterar();
 				break;
 			case 0:
 				System.out.println("Saindo...\n");

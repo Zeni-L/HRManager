@@ -30,7 +30,7 @@ public class SetorController {
 		return setores;
 	}
 
-	public static Integer GerarCodSetor() {
+	public static Integer gerarCodSetor() {
 		return id++;
 	}
 

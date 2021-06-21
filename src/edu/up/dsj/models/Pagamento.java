@@ -8,28 +8,22 @@ public class Pagamento {
 
 	private int ano;
 
-	private double valorHora;
-	
-	private int horasTrabalhadas;
-
 	private double inss;
 
 	private double ir;
 
 	private double fgts;
-	
-	private double valorBruto;
 
-	private double valorLiquido;
+	private double valorFinal;
 
-	private PessoaFisica funcionario;
-	
+	private Funcionario funcionario;
+
 	DecimalFormat formato;
 
 	public Pagamento() {
 
 		formato = new DecimalFormat("#.##");
-		
+
 	}
 
 	public int getMes() {
@@ -46,22 +40,6 @@ public class Pagamento {
 
 	public void setAno(int ano) {
 		this.ano = ano;
-	}
-
-	public double getValorHora() {
-		return valorHora;
-	}
-
-	public void setValorHora(double valorHora) {
-		this.valorHora = valorHora;
-	}
-
-	public int getHorasTrabalhadas() {
-		return horasTrabalhadas;
-	}
-
-	public void setHorasTrabalhadas(int horasTrabalhadas) {
-		this.horasTrabalhadas = horasTrabalhadas;
 	}
 
 	public double getInss() {
@@ -88,36 +66,30 @@ public class Pagamento {
 		this.fgts = fgts;
 	}
 
-	public double getValorBruto() {
-		return valorBruto;
+	public double getvalorFinal() {
+		return valorFinal;
 	}
 
-	public void setValorBruto(double valorBruto) {
-		this.valorBruto = valorBruto;
+	public void setvalorFinal(double valorLiquido) {
+		this.valorFinal = valorLiquido;
 	}
 
-	public double getValorLiquido() {
-		return valorLiquido;
-	}
-
-	public void setValorLiquido(double valorLiquido) {
-		this.valorLiquido = valorLiquido;
-	}
-
-	public PessoaFisica getFuncionario() {
+	public Funcionario getFuncionario() {
 		return funcionario;
 	}
 
-	public void setFuncionario(PessoaFisica funcionario) {
+	public void setFuncionario(FuncionarioHora funcionario) {
 		this.funcionario = funcionario;
+	}
+	
+	public void setFuncionario(FuncionarioMes funcionario2) {
+		this.funcionario = funcionario2;
 	}
 
 	@Override
 	public String toString() {
-		return "\n=============================================\n" + "\nFuncionário: " + funcionario.getNome()
-				+ "\nCPF: " + funcionario.getCpf() + "\nMes de referência: " + mes
-				+ " | Ano: " + ano + "\n" + "\n=============================================\n"
-				+ "\nSalario: " + valorBruto + "\n\nDescontos: " + "\nINSS: R$ " + formato.format(inss) + "\nIR: R$ " + formato.format(ir)
-				+ "\nValor a receber: R$ " + valorLiquido;
+		return "\n=============================================\n" + "\nMes de referência: " + mes + " | Ano: " + ano + "\n"
+				+ "\n=============================================" + "\nDescontos: " + "\nINSS: R$ "
+				+ formato.format(inss) + "\nIR: R$ " + formato.format(ir) + "\nValor a receber: R$ " + valorFinal;
 	}
 }
