@@ -58,9 +58,8 @@ public class SetorController {
 		boolean deletado = false;
 
 		for (Setor setorCadastrado : setores) {
-			if (setorCadastrado.getCodigoSetor().equals(setorCadastrado.getCodigoSetor())) {
-				FuncionarioController.deletarSetor(setor);
-				setores.remove(setorCadastrado);
+			if (setorCadastrado.getCodigoSetor().equals(setor.getCodigoSetor())) {
+				setores.remove(setor);
 				deletado = true;
 				break;
 			}
