@@ -8,7 +8,7 @@ import edu.up.dsj.utils.Console;
 import edu.up.dsj.utils.ValidarCpf;
 
 /**
- * Classe para cadastrar uma nova pessoa fisica ou juridica. Não permite
+ * Classe para cadastrar uma nova pessoa fisica ou juridica. Nï¿½o permite
  * cadastrar pessoas com o mesmo CPF/CNPJ.
  * @author Leandro Zeni
  */
@@ -26,7 +26,7 @@ public class CadastrarFuncionario {
 				System.out.println("\n========= NOVO COLABORADOR =========");
 				System.out.println("\n1. Funcionario Horista\n2. Funcionario Mensalista");
 
-				cadastro = Console.lerInteiro("\nSelecione a opção: ");
+				cadastro = Console.lerInteiro("\nSelecione a opÃ§Ã£o: ");
 
 				switch (cadastro) {
 
@@ -38,22 +38,22 @@ public class CadastrarFuncionario {
 
 					if (ValidarCpf.isCPF(funcionarioHora.getCpf()) == true) {
 						funcionarioHora.setTelefone(Console.lerString("Telefone de contato: "));
-						funcionarioHora.setEndereco(Console.lerString("Endereço: "));
+						funcionarioHora.setEndereco(Console.lerString("EndereÃ§o: "));
 
-						System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
+						System.out.println("\nCadastre o funcionÃ¡rio em um dos setores abaixo: ");
 						ListarSetores.renderizar();
 
-						codSetor = Console.lerInteiro("\nCódigo do setor: ");
+						codSetor = Console.lerInteiro("\nCÃ³digo do setor: ");
 						funcionarioHora.setSetor(SetorController.retornarSetor(codSetor));
 						funcionarioHora.setValorHora(Console.lerDouble("Valor da hora trabalhada: "));
 						
 						if (FuncionarioController.cadastrar(funcionarioHora) == true) {
 							System.out.println("\nColaborador Cadastrado!");
 						} else {
-							System.out.println("\nNão foi possível cadastrar");
+							System.out.println("\nNÃ£o foi possÃ­vel cadastrar");
 						}
 					} else {
-						System.out.println("\nCNPJ inválido. Tente novamente.");
+						System.out.println("\n CPF invÃ¡lido. Tente novamente.");
 					}
 					break;
 
@@ -65,22 +65,22 @@ public class CadastrarFuncionario {
 
 					if (ValidarCpf.isCPF(funcionarioMes.getCpf()) == true) {
 						funcionarioMes.setTelefone(Console.lerString("Telefone de contato: "));
-						funcionarioMes.setEndereco(Console.lerString("Endereço: "));
-						funcionarioMes.setSalarioBruto(Console.lerDouble("Salário: "));
+						funcionarioMes.setEndereco(Console.lerString("Endereï¿½o: "));
+						funcionarioMes.setSalarioBruto(Console.lerDouble("Salï¿½rio: "));
 
-						System.out.println("\nCadastre o funcionário em um dos setores abaixo: ");
+						System.out.println("\nCadastre o funcionï¿½rio em um dos setores abaixo: ");
 						ListarSetores.renderizar();
 
-						codSetor = Console.lerInteiro("\nCódigo do setor: ");
+						codSetor = Console.lerInteiro("\nCï¿½digo do setor: ");
 						funcionarioMes.setSetor(SetorController.retornarSetor(codSetor));
 
 						if (FuncionarioController.cadastrar(funcionarioMes) == true) {
 							System.out.println("\nColaborador Cadastrado!");
 						} else {
-							System.out.println("\nNão foi possível cadastrar");
+							System.out.println("\nNï¿½o foi possï¿½vel cadastrar");
 						}
 					} else {
-						System.out.println("\nCPF inválido. Tente novamente.");
+						System.out.println("\nCPF invï¿½lido. Tente novamente.");
 					}
 					break;
 
@@ -92,7 +92,7 @@ public class CadastrarFuncionario {
 
 			} while (escolha.equalsIgnoreCase("S"));
 		} else {
-			System.out.println("\nNão há setores cadastrados. Cadastre um novo setor e tente novamente.");
+			System.out.println("\nNï¿½o hï¿½ setores cadastrados. Cadastre um novo setor e tente novamente.");
 		}
 
 	}
