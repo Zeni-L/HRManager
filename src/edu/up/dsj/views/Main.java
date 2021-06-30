@@ -13,9 +13,9 @@ public class Main {
 		
 			do {
 				System.out.println("========= HUMAN RESOURCES MANAGER =========\n");
-				System.out.println("1. Setores" + "\n2. Funcionários" + "\n3. Holerites" + "\n0. Sair");
+				System.out.println("1. Setores" + "\n2. Funcionï¿½rios" + "\n3. Holerites" + "\n0. Sair");
 
-					escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
+					escolha = Console.lerInteiro("\nEntre com a opÃ§Ã£o desejada: ");
 
 					switch (escolha) {
 
@@ -32,13 +32,13 @@ public class Main {
 						System.out.println("\nSaindo...");
 						break;
 					default:
-						System.out.println("\nOpção Inválida!\n");
+						System.out.println("\nOpÃ§Ã£o InvÃ¡lida!\n");
 						break;
 					}
 			} while (escolha != 0);
 
 		sc.close();
-		System.out.println("\nFim da execução do HR Manager - Todos os direitos reservados.");
+		System.out.println("\nFim da execuÃ§Ã£o do HR Manager - Todos os direitos reservados.");
 		
 	}
 }

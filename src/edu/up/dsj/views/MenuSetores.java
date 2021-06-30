@@ -11,9 +11,9 @@ public class MenuSetores {
 		do {
 			System.out.println("\n============ SETORES ============\n");
 			System.out.println(
-					"1. Cadastrar novo setor" + "\n2. Listar todos os setores" + "\n3. Editar Setor" + "\n0. Sair");
+					"1. Cadastrar novo setor" + "\n2. Listar todos os setores" + "\n3. Editar Setor" + "\n4. Deletar Setor" + "\n0. Sair");
 
-			escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
+			escolha = Console.lerInteiro("\nEntre com a opÃ§Ã£o desejada: ");
 			
 			switch (escolha) {
 			case 1:
@@ -25,11 +25,13 @@ public class MenuSetores {
 			case 3:
 				EditarSetor.alterar();
 				break;
+			case 4:
+				DeletarSetor.Deletar();
 			case 0:
 				System.out.println("Saindo...\n");
 				break;
 			default:
-				System.out.println("Opção inválida\n");
+				System.out.println("Opï¿½ï¿½o invï¿½lida\n");
 				break;
 			}
 		} while (escolha != 0);

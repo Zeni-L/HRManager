@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import edu.up.dsj.models.Setor;
 
 /**
- * Classe para controle de cadastros de novos setores e manipulação de ArrayList para o objeto Setor.
+ * Classe para controle de cadastros de novos setores e manipulaï¿½ï¿½o de ArrayList para o objeto Setor.
  * @author Leandro Zeni
  */
 public class SetorController {
@@ -35,7 +35,7 @@ public class SetorController {
 	}
 
 	/**
-	 * Classe que busca o setor no ArrayList com base no código de setor, inserido pelo usuário. Não implementado na versão final do código.
+	 * Classe que busca o setor no ArrayList com base no cï¿½digo de setor, inserido pelo usuï¿½rio. Nï¿½o implementado na versï¿½o final do cï¿½digo.
 	 * @param codigoSetor.
 	 * @return O setor encontrado na lista.
 	 */
@@ -52,4 +52,19 @@ public class SetorController {
 		
 		return setorEncontrado;
 	}
+
+	public static boolean Deletar(Setor setor) {
+
+		boolean deletado = false;
+
+		for (Setor setorCadastrado : setores) {
+			if (setorCadastrado.getCodigoSetor().equals(setorCadastrado.getCodigoSetor())) {
+				setores.remove(setorCadastrado);
+				deletado = true;
+				break;
+			}
+		}
+		return deletado;
+	}
+
 }

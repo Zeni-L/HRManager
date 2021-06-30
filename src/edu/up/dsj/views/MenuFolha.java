@@ -12,7 +12,7 @@ public class MenuFolha {
 			System.out.println("\n========= HOLERITES =========\n");
 			System.out.println("1. Gerar folha de pagamento" + "\n2. Imprimir Holerite" + "\n0. Sair");
 
-			escolha = Console.lerInteiro("\nEntre com a opção desejada: ");
+			escolha = Console.lerInteiro("\nEntre com a opÃ§Ã£o desejada: ");
 			switch (escolha) {
 			case 1:
 				CadastrarFolha.calcularFolha();
@@ -24,7 +24,7 @@ public class MenuFolha {
 				System.out.println("Saindo...\n");
 				break;
 			default:
-				System.out.println("Opção inválida\n");
+				System.out.println("Opï¿½ï¿½o invï¿½lida\n");
 			}
 		} while (escolha != 0);
 	}
