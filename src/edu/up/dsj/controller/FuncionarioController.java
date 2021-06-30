@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import edu.up.dsj.models.Funcionario;
 import edu.up.dsj.models.FuncionarioHora;
 import edu.up.dsj.models.FuncionarioMes;
+import edu.up.dsj.models.Setor;
 
 /**
  * Classe para controle de cadastros e manipulação de ArrayList para o objeto
@@ -75,5 +76,24 @@ public class FuncionarioController {
 		}
 
 		return deletado;
+	}
+	
+	public static void deletarSetor(Setor setor) {
+		for (Funcionario funcionariosCadastrados : funcionarios) {
+			if (funcionariosCadastrados.getSetor().getCodigoSetor().equals(setor.getCodigoSetor())) {
+				funcionariosCadastrados.getSetor().setNome(null);
+				funcionariosCadastrados.getSetor().setCodigoSetor(null);
+			}
+		}
+	}
+	
+	public static ArrayList<Funcionario> listarPorSetor(int setor){
+		ArrayList<Funcionario> funcionariosSetor = new ArrayList<Funcionario>();
+		for (Funcionario funcionariosCadastrados : funcionarios) {
+			if (funcionariosCadastrados.getSetor().getCodigoSetor().equals(setor)) {
+				funcionariosSetor.add(funcionariosCadastrados);
+			}
+		}
+		return funcionariosSetor;
 	}
 }

@@ -13,7 +13,8 @@ public class MenuFuncionario {
 
 			System.out.println("1. Cadastrar novo funcionário" + "\n2. Listar todos os funcionários"
 					+ "\n3. Consultar funcionários - Horistas" + "\n4. Consultar funcionários - Mensalistas"
-					+ "\n5. Buscar funcionário" + "\n6. Editar Dados de funcionário" + "\n7. Deletar funcionário"
+					+ "\n5. Consultar funcionários - Setor"
+					+ "\n6. Buscar funcionário" + "\n7. Editar Dados de funcionário" + "\n8. Deletar funcionário"
 					+ "\n0. Sair");
 
 			escolha = Console.lerInteiro("\nEscolha uma das opções acima: ");
@@ -32,12 +33,15 @@ public class MenuFuncionario {
 				ListarFuncionarios.renderizarMensalistas();
 				break;
 			case 5:
-				BuscarFuncionario.imprimirColaborador();
+				ListarFuncionarios.renderizarPorSetor();
 				break;
 			case 6:
-				EditarFuncionario.alterar();
+				BuscarFuncionario.imprimirColaborador();
 				break;
 			case 7:
+				EditarFuncionario.alterar();
+				break;
+			case 8:
 				RemoverFuncionario.remover();
 				break;
 			case 0:
