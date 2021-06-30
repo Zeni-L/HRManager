@@ -9,15 +9,15 @@ public class MenuFuncionario {
 		int escolha = 0;
 
 		do {
-			System.out.println("\n========= FUNCIONÁRIOS =========\n");
+			System.out.println("\n========= FUNCIONï¿½RIOS =========\n");
 
-			System.out.println("1. Cadastrar novo funcionário" + "\n2. Listar todos os funcionários"
-					+ "\n3. Consultar funcionários - Horistas" + "\n4. Consultar funcionários - Mensalistas"
-					+ "\n5. Consultar funcionários - Setor"
-					+ "\n6. Buscar funcionário" + "\n7. Editar Dados de funcionário" + "\n8. Deletar funcionário"
+			System.out.println("1. Cadastrar novo funcionï¿½rio" + "\n2. Listar todos os funcionï¿½rios"
+					+ "\n3. Consultar funcionï¿½rios - Horistas" + "\n4. Consultar funcionï¿½rios - Mensalistas"
+					+ "\n5. Consultar funcionï¿½rios - Setor"
+					+ "\n6. Buscar funcionï¿½rio" + "\n7. Editar Dados de funcionï¿½rio" + "\n8. Deletar funcionï¿½rio" + "\n9. Listar funcionÃ¡rio por Setor"
 					+ "\n0. Sair");
 
-			escolha = Console.lerInteiro("\nEscolha uma das opções acima: ");
+			escolha = Console.lerInteiro("\nEscolha uma das opï¿½ï¿½es acima: ");
 
 			switch (escolha) {
 			case 1:
@@ -44,11 +44,14 @@ public class MenuFuncionario {
 			case 8:
 				RemoverFuncionario.remover();
 				break;
+			case 9:
+				ListarPorSetor.listarFuncSetores();
+				break;
 			case 0:
 				System.out.println("Saindo...\n");
 				break;
 			default:
-				System.out.println("\nOpção inválida!");
+				System.out.println("\nOpï¿½ï¿½o invï¿½lida!");
 				break;
 			}
 		} while (escolha != 0);

@@ -7,7 +7,7 @@ import edu.up.dsj.models.FuncionarioMes;
 import edu.up.dsj.models.Setor;
 
 /**
- * Classe para controle de cadastros e manipulação de ArrayList para o objeto
+ * Classe para controle de cadastros e manipulaï¿½ï¿½o de ArrayList para o objeto
  * Colaborador.
  * 
  * @author Leandro Zeni

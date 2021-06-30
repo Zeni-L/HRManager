@@ -14,7 +14,7 @@ public class EditarFuncionario {
 		Funcionario funcionario = new Funcionario();
 		String cpf;
 
-		System.out.println("\n========= ALTERAR INFORMAÇÕES =========\n");
+		System.out.println("\n========= ALTERAR INFORMAÃ‡Ã•ES =========\n");
 		cpf = Console.lerString("Insira o CPF do colaborador: ");
 
 		funcionario = FuncionarioController.buscarPorCpf(cpf);
@@ -23,27 +23,37 @@ public class EditarFuncionario {
 		if (funcionario != null) {
 
 			int escolha;
-			System.out.println("\n1. Nome" + "\n2. Telefone" + "\n3. Endereço" + "\n4. Salario" + "\n5. Setor");
-			escolha = Console.lerInteiro("\nQual das informações deseja alterar? ");
+			System.out.println("\n1. Nome" + "\n2. Telefone" + "\n3. Endereï¿½o" + "\n4. Salario" + "\n5. Setor");
+			escolha = Console.lerInteiro("\nQual das informaÃ§Ãµes deseja alterar? ");
 
 			switch (escolha) {
 
 			case 1:
 				funcionario.setNome(Console.lerString("Alterar nome: "));
+				System.out.println("\nDado atualizado!");
+
 				break;
 			case 2:
 				funcionario.setTelefone(Console.lerString("Alterar telefone: "));
+				System.out.println("\nDado atualizado!");
+
 				break;
 			case 3:
-				funcionario.setEndereco(Console.lerString("Alterar endereço: "));
+				funcionario.setEndereco(Console.lerString("Alterar endereï¿½o: "));
+				System.out.println("\nDado atualizado!");
+
 				break;
 			case 4:
 				if(funcionario instanceof FuncionarioMes) {
 					
 					((FuncionarioMes) funcionario).setSalarioBruto(Console.lerDouble("Novo valor: "));
+					System.out.println("\nDado atualizado!");
+
 				}else {
 					
 					((FuncionarioHora) funcionario).setValorHora(Console.lerDouble("Novo valor da hora: "));
+					System.out.println("\nDado atualizado!");
+
 				}
 				break;
 			case 5:
@@ -52,9 +62,11 @@ public class EditarFuncionario {
 				ListarSetores.renderizar();
 				codSetor = Console.lerInteiro("Setor: ");
 				funcionario.setSetor(SetorController.retornarSetor(codSetor));
+				System.out.println("\nDado atualizado!");
+
 				break;
 			default:
-				System.out.println("\nOpção inválida. Tente novamente\n");
+				System.out.println("\nOpÃ§Ã£o invÃ¡lida. Tente novamente\n");
 			}
 		}
 	}

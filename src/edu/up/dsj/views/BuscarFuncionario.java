@@ -25,9 +25,10 @@ public class BuscarFuncionario {
 			System.out.println("Nome: " + funcionario.getNome());
 			System.out.println("CPF: " + funcionario.getCpf());
 			System.out.println("Contato: " + funcionario.getTelefone());
-			System.out.println("Data de Contratação: " + formatter.format(funcionario.getCadastradoEm()));
+			System.out.println("Data de Contrataï¿½ï¿½o: " + formatter.format(funcionario.getCadastradoEm()));
 			System.out.println("Setor: " + funcionario.getSetor().getNome());
 		} else
-			System.out.println("\nColaborador não cadastrado. Tente novamente\n");
+			System.out.println("\nColaborador nï¿½o cadastrado. Tente novamente\n");
 	}
+	
 }
