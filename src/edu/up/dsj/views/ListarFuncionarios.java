@@ -10,12 +10,12 @@ import edu.up.dsj.models.FuncionarioMes;
 import edu.up.dsj.utils.Console;
 
 /**
- * Classe para imprimir a lista de colaboradores na tela para os usuários.
+ * Classe para imprimir a lista de colaboradores na tela para os usuï¿½rios.
  * @author Leandro Zeni
  */
 public class ListarFuncionarios {
 
-	private static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy 'ás' HH:mm");
+	private static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy 'ï¿½s' HH:mm");
 	
 	public static void renderizarTodos() {
 
@@ -23,7 +23,7 @@ public class ListarFuncionarios {
 		for (Funcionario colaborador : FuncionarioController.retornarListaFuncionarios()) {
 			System.out.println("Nome: " + colaborador.getNome() + " | Setor: "
 					+ colaborador.getSetor().getNome() + " | Cadastrado em: "
-					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereço: " + colaborador.getEndereco()
+					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereï¿½o: " + colaborador.getEndereco()
 					+ "\n");
 		}
 		System.out.println("\n=================================\n");
@@ -35,7 +35,7 @@ public class ListarFuncionarios {
 		for (FuncionarioHora colaborador : FuncionarioController.retornarListaHoristas()) {
 			System.out.println("Nome: " + colaborador.getNome() + " | Setor: "
 					+ colaborador.getSetor().getNome() + " | Cadastrado em: "
-					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereço: " + colaborador.getEndereco()
+					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereï¿½o: " + colaborador.getEndereco()
 					+ "\n");
 		}
 		System.out.println("\n=================================\n");
@@ -44,11 +44,11 @@ public class ListarFuncionarios {
 	public static void renderizarMensalistas() {
 
 		System.out.println("\n========= COLABORADORES MENSALISTAS =========\n");
-		System.out.println("codigoSetor = Console.lerInteiro(\"Insira o CÃ³digo do setor: \");");
+		
 		for (Funcionario colaborador : FuncionarioController.retornarListaMensalistas()) {
 			System.out.println("Nome: " + colaborador.getNome() + " | Setor: "
 					+ colaborador.getSetor().getNome() + " | Cadastrado em: "
-					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereço: " + colaborador.getEndereco()
+					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereï¿½o: " + colaborador.getEndereco()
 					+ "\n");
 		}
 		System.out.println("\n=================================\n");
@@ -64,7 +64,7 @@ public class ListarFuncionarios {
 		for (Funcionario colaborador : funcionariosPorSetor) {
 			System.out.println("Nome: " + colaborador.getNome() + " | Setor: "
 					+ colaborador.getSetor().getNome() + " | Cadastrado em: "
-					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereço: " + colaborador.getEndereco()
+					+ formatter.format(colaborador.getCadastradoEm()) + " | Endereï¿½o: " + colaborador.getEndereco()
 					+ "\n");
 		}
 		System.out.println("\n=================================\n");
